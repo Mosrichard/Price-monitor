@@ -16,5 +16,11 @@ jobs:
       - name: Install dependencies
         run: pip install requests beautifulsoup4
       
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
+      
       - name: Run GitHub price bot
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
         run: python github_bot.py
